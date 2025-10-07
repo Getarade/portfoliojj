@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Guild - Web Development Experts</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --background: hsl(240, 10%, 3.9%);
+        --foreground: hsl(0, 0%, 98%);
+        --primary: hsl(24, 95%, 53%);
+        --muted: hsl(240, 3.7%, 15.9%);
+        --card: hsl(240, 5%, 12%);
+        --border: hsl(240, 3.7%, 25%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--background);
+        color: var(--foreground);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* Header Styles */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        background-color: rgba(15, 15, 20, 0.8);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 0;
+      }
+
+      .logo {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--foreground);
+        text-decoration: none;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        position: relative;
+        padding: 5px 0;
+      }
+
+      .logo span {
+        color: var(--primary);
+        position: relative;
+        display: inline-block;
+        text-transform: uppercase;
+      }
+
+      .logo span::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--primary);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: var(--foreground);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--foreground);
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-top: 5rem;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        letter-spacing: -1px;
+      }
+
+      .hero h1 span:last-child::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary);
+        margin-top: 5px;
+        border-radius: 2px;
+        box-shadow: 0 2px 8px rgba(251, 146, 60, 0.5);
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+      }
+
+      .hero-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(251, 146, 60, 0.15) 0%,
+          rgba(251, 146, 60, 0) 70%
+        );
+        filter: blur(40px);
+        z-index: 1;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--primary);
+        color: var(--background);
+        padding: 0.9rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 14px 0 rgba(251, 146, 60, 0.3);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px 0 rgba(251, 146, 60, 0.4);
+      }
+
+      /* Section Styles */
+      section {
+        padding: 6rem 0;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1rem;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary);
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 800px;
+        margin: 2rem auto 3rem;
+      }
+
+      /* Team Section */
+      .team-intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        margin-bottom: 4rem;
+      }
+
+      .team-text {
+        padding-right: 1rem;
+      }
+
+      .team-image {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        height: 400px;
+        background: linear-gradient(
+          135deg,
+          var(--muted) 0%,
+          var(--primary) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--foreground);
+        font-size: 1.2rem;
+        position: relative;
+      }
+
+      .team-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      /* Services Section */
+      .services {
+        background-color: var(--muted);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background-color: var(--card);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .service-card.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary);
+      }
+
+      .service-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+      }
+
+      .service-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .service-card p {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Contact Section */
+      .contact-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 600px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .contact-icon {
+        font-size: 1.5rem;
+        color: var(--primary);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--muted);
+        padding: 3rem 0;
+        text-align: center;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .footer-nav {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .footer-nav a {
+        color: var(--foreground);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-nav a:hover {
+        color: var(--primary);
+      }
+
+      .copyright {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .team-intro {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .team-text {
+          padding-right: 0;
+        }
+
+        .team-image {
+          height: 250px;
+          order: -1;
+        }
+
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background-color: var(--background);
+          flex-direction: column;
+          padding: 1.5rem 0;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          border-top: 1px solid var(--border);
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .nav-links a {
+          padding: 0.8rem 1.5rem;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .hero-glow {
+          width: 300px;
+          height: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container nav-container">
+        <a href="#" class="logo">The <span>Guild</span></a>
+        <nav>
+          <button class="mobile-menu-btn">☰</button>
+          <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#team">Team</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-glow"></div>
+      <div class="container">
+        <div class="hero-content fade-in-up">
+          <h1>
+            <span style="color: var(--foreground)">We are</span>
+            <span
+              style="
+                color: var(--primary);
+                position: relative;
+                display: inline-block;
+              "
+              >The Guild</span
+            >
+          </h1>
+          <p>
+            A collective of passionate developers dedicated to building
+            exceptional web experiences. From sleek designs to powerful
+            backends, we bring your vision to life.
+          </p>
+          <a href="#contact" class="btn">Hire Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+      <div class="container">
+        <h2 class="section-title">Meet the Crafters</h2>
+        <p class="section-subtitle">
+          We are a collective of passionate web developers dedicated to bringing
+          your digital projects to life with precision and expertise. Fueled by
+          a shared motivation for innovation and excellence, we thrive on
+          crafting robust, scalable, and beautiful web experiences from the
+          ground up.
+        </p>
+
+        <div class="team-intro">
+          <div class="team-text">
+            <h3>Our Collaborative Approach</h3>
+            <p>
+              At The Guild, we believe that the best solutions emerge from
+              collaboration. Our team meets regularly to brainstorm,
+              problem-solve, and ensure every project benefits from our
+              collective expertise.
+            </p>
+            <p>
+              We combine diverse skills and perspectives to create digital
+              experiences that are not only technically sound but also
+              user-centered and business-focused.
+            </p>
+            <p>
+              Our process is iterative and transparent, keeping you involved at
+              every stage of development to ensure the final product exceeds
+              your expectations.
+            </p>
+          </div>
+          <div class="team-image">
+            <!-- Added actual image link for meeting in session -->
+            <img
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Meeting in session"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+              "
+            />
+            <div
+              style="
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                z-index: 2;
+                background-color: rgba(0, 0, 0, 0.7);
+                padding: 10px;
+                border-radius: 5px;
+              "
+            >
+              <h3 style="margin-bottom: 5px">Team Collaboration</h3>
+              <p>Brainstorming session in progress</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2 class="section-title">What We Do</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <h3>Full-Stack Development</h3>
+            <p>
+              From front-end finesse with React & JS to back-end power with
+              Node.js, PHP, MySQL & MongoDB.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fab fa-wordpress"></i>
+            </div>
+            <h3>WordPress & WooCommerce</h3>
+            <p>
+              Custom themes, plugin development, and robust eCommerce solutions
+              that are tailored to your brand.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-tachometer-alt"></i>
+            </div>
+            <h3>Speed Optimization & SEO</h3>
+            <p>
+              Achieving faster load times and higher search engine rankings to
+              drive organic traffic.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fab fa-python"></i>
+            </div>
+            <h3>Python Development</h3>
+            <p>
+              Leveraging Python for backend services, data science, and
+              AI-powered applications.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h3>Shopify Store Development</h3>
+            <p>
+              Building beautiful, high-performing Shopify stores optimized for
+              sales and customer experience.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Responsive, Mobile-First Design</h3>
+            <p>
+              Ensuring a flawless and intuitive user experience on all devices,
+              from phones to desktops.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-drafting-compass"></i>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>
+              Crafting intuitive and visually appealing user interfaces that
+              enhance user engagement.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-video"></i>
+            </div>
+            <h3>Video Editing</h3>
+            <p>
+              Producing professional-quality videos for marketing, tutorials,
+              and promotional content.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Web Security</h3>
+            <p>
+              Implementing best practices to keep your application secure and
+              your data safe.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Have a project in mind? We'd love to hear from you.</h3>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <p>abdullahsardar1234@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h4>Phone</h4>
+                <p>+92 318 8803903</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="logo">The <span>Guild</span></div>
+          <div class="footer-nav">
+            <a href="#home">Home</a>
+            <a href="#team">Team</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <p class="copyright">© 2025 The Guild. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const navMenu = document.querySelector(".nav-links");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            navMenu.classList.remove("active");
+          }
+        });
+      });
+
+      // Scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+          }
+        });
+      }, observerOptions);
+
+      // Observe service cards
+      document.querySelectorAll(".service-card").forEach((card) => {
+        observer.observe(card);
+      });
+
+      // Add fade-in-up animation to hero content
+      window.addEventListener("load", () => {
+        document.querySelector(".hero-content").classList.add("fade-in-up");
+      });
+    </script>
+  </body>
+</html>
