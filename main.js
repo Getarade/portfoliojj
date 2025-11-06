@@ -51,6 +51,10 @@ class ProjectsSection extends HTMLElement {
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
           gap: 2rem;
         }
+        
+        .project-link {
+            text-decoration: none;
+        }
 
         .project-card {
           background-color: var(--card);
@@ -84,6 +88,8 @@ class ProjectsSection extends HTMLElement {
         .project-content h3 {
           font-size: 1.5rem;
           margin-bottom: 1rem;
+          color: var(--foreground);
+
         }
 
         .project-content p {
@@ -94,33 +100,39 @@ class ProjectsSection extends HTMLElement {
         <div class="container">
           <h2 class="section-title">Our Work</h2>
           <div class="projects-grid">
-            <div class="project-card">
-              <div class="project-image">
-                <img src="images/kirakiraclean.png" alt="KiraKira Clean">
-              </div>
-              <div class="project-content">
-                <h3>KiraKira Clean</h3>
-                <p>A modern and clean website for a cleaning service company, focusing on user experience and easy booking.</p>
-              </div>
-            </div>
-            <div class="project-card">
-              <div class="project-image">
-                <img src="images/northernplumbing.png" alt="Northern Plumbing Company">
-              </div>
-              <div class="project-content">
-                <h3>Northern Plumbing Company</h3>
-                <p>A professional website for a plumbing company, designed to be informative and easy to navigate for emergency services.</p>
-              </div>
-            </div>
-            <div class="project-card">
-              <div class="project-image">
-                <img src="images/bluesharktours.png" alt="Blue Shark Tours">
-              </div>
-              <div class="project-content">
-                <h3>Blue Shark Tours</h3>
-                <p>A corporate website for a tour and travel company, showcasing their projects and services.</p>
-              </div>
-            </div>
+            <a href="https://kirakiraclean.com/" target="_blank" class="project-link">
+                <div class="project-card">
+                <div class="project-image">
+                    <img src="images/kirakiraclean.png" alt="KiraKira Clean">
+                </div>
+                <div class="project-content">
+                    <h3>KiraKira Clean</h3>
+                    <p>A modern and clean website for a cleaning service company, focusing on user experience and easy booking.</p>
+                </div>
+                </div>
+            </a>
+            <a href="https://www.northernplumbingcompany.com.au/" target="_blank" class="project-link">
+                <div class="project-card">
+                <div class="project-image">
+                    <img src="images/northernplumbing.png" alt="Northern Plumbing Company">
+                </div>
+                <div class="project-content">
+                    <h3>Northern Plumbing Company</h3>
+                    <p>A professional website for a plumbing company, designed to be informative and easy to navigate for emergency services.</p>
+                </div>
+                </div>
+            </a>
+            <a href="https://lbccorporations.com/" target="_blank" class="project-link">
+                <div class="project-card">
+                <div class="project-image">
+                    <img src="images/bluesharktours.png" alt="Blue Shark Tours">
+                </div>
+                <div class="project-content">
+                    <h3>Blue Shark Tours</h3>
+                    <p>A corporate website for a tour and travel company, showcasing their projects and services.</p>
+                </div>
+                </div>
+            </a>
           </div>
         </div>
       </section>
