@@ -25,23 +25,25 @@ class ProjectsSection extends HTMLElement {
         }
 
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem; /* Adjusted font size */
+            font-weight: 800; /* Adjusted font weight */
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 3rem; /* Adjusted margin */
             position: relative;
+            color: var(--foreground);
         }
 
         .section-title::after {
             content: "";
             position: absolute;
-            bottom: -10px;
+            bottom: -15px; /* Adjusted position */
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
+            width: 100px; /* Adjusted width */
+            height: 5px; /* Adjusted height */
             background-color: var(--primary);
-            border-radius: 2px;
+            border-radius: 2.5px; /* Adjusted border-radius */
         }
 
         .projects-grid {
