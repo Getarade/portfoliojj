@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+A simple HTML/JS/CSS starter template
+=======
 # The Guild - Web Development Portfolio
 
 A modern, responsive portfolio website for The Guild web development team. This site showcases the team's services, expertise, and contact information.
@@ -35,3 +38,4 @@ cd portfoliojj
 ## License
 
 © 2025 The Guild. All rights reserved.
+>>>>>>> cdef7ca3b238086b5bd13fe1b4258c7eeee3d70b

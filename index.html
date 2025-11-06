@@ -4,46 +4,268 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>The Guild - Web Development Experts</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
-  <script type="module" src="components/site-header.js"></script>
-  <script type="module" src="components/portfolio-item.js"></script>
-  <script type="module" src="components/projects-section.js"></script>
 </head>
 
 <body>
-  <site-header></site-header>
+  <!-- Header -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">The <span>Guild</span></a>
+      <nav>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#team">Team</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-  <main>
-    <section id="hero">
-      <div class="container">
-        <h1>Welcome to my Portfolio</h1>
-        <p>I build modern and responsive web applications.</p>
-        <a href="#projects" class="btn">My Work</a>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-glow"></div>
+    <div class="container">
+      <div class="hero-content fade-in-up">
+        <h1>
+          <span style="color: var(--foreground)">We are</span>
+          <span style="
+                color: var(--primary);
+                position: relative;
+                display: inline-block;
+              ">The Guild</span>
+        </h1>
+        <p>
+          A collective of passionate developers dedicated to building
+          exceptional web experiences. From sleek designs to powerful
+          backends, we bring your vision to life.
+        </p>
+        <a href="#contact" class="btn">Hire Us</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="about">
-      <div class="container">
-        <h2>About Me</h2>
-        <p>I am a passionate web developer with experience in creating beautiful and functional websites. I am skilled in HTML, CSS, JavaScript, and various front-end frameworks.</p>
+  <!-- Team Section -->
+  <section id="team">
+    <div class="container">
+      <h2 class="section-title">Meet the Crafters</h2>
+      <p class="section-subtitle">
+        We are a collective of passionate web developers dedicated to bringing
+        your digital projects to life with precision and expertise. Fueled by
+        a shared motivation for innovation and excellence, we thrive on
+        crafting robust, scalable, and beautiful web experiences from the
+        ground up.
+      </p>
+
+      <div class="team-intro">
+        <div class="team-text">
+          <h3>Our Collaborative Approach</h3>
+          <p>
+            At The Guild, we believe that the best solutions emerge from
+            collaboration. Our team meets regularly to brainstorm,
+            problem-solve, and ensure every project benefits from our
+            collective expertise.
+          </p>
+          <p>
+            We combine diverse skills and perspectives to create digital
+            experiences that are not only technically sound but also
+            user-centered and business-focused.
+          </p>
+          <p>
+            Our process is iterative and transparent, keeping you involved at
+            every stage of development to ensure the final product exceeds
+            your expectations.
+          </p>
+        </div>
+        <div class="team-image">
+          <!-- Added actual image link for meeting in session -->
+          <img
+            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+            alt="Meeting in session" style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+              " />
+          <div style="
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                z-index: 2;
+                background-color: rgba(0, 0, 0, 0.7);
+                padding: 10px;
+                border-radius: 5px;
+              ">
+            <h3 style="margin-bottom: 5px">Team Collaboration</h3>
+            <p>Brainstorming session in progress</p>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <projects-section id="projects"></projects-section>
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">What We Do</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <h3>Full-Stack Development</h3>
+          <p>
+            From front-end finesse with React & JS to back-end power with
+            Node.js, PHP, MySQL & MongoDB.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fab fa-wordpress"></i>
+          </div>
+          <h3>WordPress & WooCommerce</h3>
+          <p>
+            Custom themes, plugin development, and robust eCommerce solutions
+            that are tailored to your brand.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-tachometer-alt"></i>
+          </div>
+          <h3>Speed Optimization & SEO</h3>
+          <p>
+            Achieving faster load times and higher search engine rankings to
+            drive organic traffic.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fab fa-python"></i>
+          </div>
+          <h3>Python Development</h3>
+          <p>
+            Leveraging Python for backend services, data science, and
+            AI-powered applications.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <h3>Shopify Store Development</h3>
+          <p>
+            Building beautiful, high-performing Shopify stores optimized for
+            sales and customer experience.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Responsive, Mobile-First Design</h3>
+          <p>
+            Ensuring a flawless and intuitive user experience on all devices,
+            from phones to desktops.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-drafting-compass"></i>
+          </div>
+          <h3>UI/UX Design</h3>
+          <p>
+            Crafting intuitive and visually appealing user interfaces that
+            enhance user engagement.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-video"></i>
+          </div>
+          <h3>Video Editing</h3>
+          <p>
+            Producing professional-quality videos for marketing, tutorials,
+            and promotional content.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Web Security</h3>
+          <p>
+            Implementing best practices to keep your application secure and
+            your data safe.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  </main>
+  <projects-section></projects-section>
 
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Have a project in mind? We'd love to hear from you.</h3>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <p>abdullahsardar1234@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div>
+              <h4>Phone</h4>
+              <p>+92 318 8803903</p>
+            </div>
+          </div>
+        </div>
+        <contact-form></contact-form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2024 My Portfolio</p>
+      <div class="footer-content">
+        <div class="logo">The <span>Guild</span></div>
+        <div class="footer-nav">
+          <a href="#home">Home</a>
+          <a href="#team">Team</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <p class="copyright">© 2025 The Guild. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
   <script src="main.js" type="module"></script>
 </body>
+git remote add origin https://github.com/getarade/portfoliojj.git
 
 </html>
