@@ -94,7 +94,7 @@ class ProjectsSection extends HTMLElement {
           <div class="projects-grid">
             <div class="project-card">
               <div class="project-image">
-                <img src="images/kirakira.png" alt="KiraKira Clean">
+                <img src="images/kirakiraclean.png" alt="KiraKira Clean">
               </div>
               <div class="project-content">
                 <h3>KiraKira Clean</h3>
@@ -127,89 +127,6 @@ class ProjectsSection extends HTMLElement {
 }
 
 customElements.define('projects-section', ProjectsSection);
-
-class ContactForm extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.innerHTML = `
-      <style>
-        /* Contact Form */
-        .contact-form {
-          max-width: 600px;
-          margin: 0 auto;
-        }
-
-        .form-group {
-          margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-          display: block;
-          margin-bottom: 0.5rem;
-          color: var(--foreground);
-        }
-
-        .form-group input,
-        .form-group textarea {
-          width: 100%;
-          padding: 0.8rem;
-          border-radius: 8px;
-          border: 1px solid var(--border);
-          background-color: var(--card);
-          color: var(--foreground);
-        }
-
-        .form-group textarea {
-          resize: vertical;
-          min-height: 150px;
-        }
-
-        .submit-btn {
-          display: inline-block;
-          background-color: var(--primary);
-          color: var(--background);
-          padding: 0.9rem 2rem;
-          border-radius: 8px;
-          text-decoration: none;
-          font-weight: 600;
-          transition: all 0.3s ease;
-          border: none;
-          cursor: pointer;
-          box-shadow: 0 4px 14px 0 rgba(251, 146, 60, 0.3);
-        }
-
-        .submit-btn:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 6px 20px 0 rgba(251, 146, 60, 0.4);
-        }
-      </style>
-      <div class="contact-form">
-        <form>
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-      </div>
-    `;
-  }
-}
-
-customElements.define('contact-form', ContactForm);
 
 document.addEventListener("DOMContentLoaded", () => {
     // Mobile menu toggle
