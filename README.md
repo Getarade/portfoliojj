@@ -27,14 +27,14 @@ A modern, responsive portfolio website for The Guild web development team. This 
 
 ## Live Demo
 
-Visit the live site: [The Guild Portfolio](https://yourusername.github.io/portfoliojj/)
+Visit the live site: [The Guild Portfolio](https://getarade.github.io/portfoliojj/)
 
 ## Setup
 
 Simply clone this repository and open the index.html file in your browser to view the site locally.
 
 ```
-git clone https://github.com/yourusername/portfoliojj.git
+git clone https://github.com/getarade/portfoliojj.git
 cd portfoliojj
 ```
 
